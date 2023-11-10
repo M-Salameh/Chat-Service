@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23a09f69-45e8-4607-a94c-253a284a386d" name="Changes" comment="ChatServiceFirst5">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/ClientChatImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/IClientChat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ChatClient/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ChatClient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ChatClient/src/main/java/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/ChatClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ChatClient/src/main/java/IServerChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/IServerChat.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,13 +20,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -39,7 +44,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/HIAST/FIY/FS/Distributed Systems/Lab/3/HW/ChatClient"
+    "last_opened_file_path": "D:/HIAST/FIY/FS/Distributed Systems/Lab/3/HW/ChatServer",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
   <component name="RecentsManager">
