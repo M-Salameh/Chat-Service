@@ -6,7 +6,7 @@ import java.rmi.registry.Registry;
 public class ChatServer
 {
     public static void main(String[] args) throws RemoteException
-    {   
+    {
         System.setProperty("java.security.policy" , "./RmiPolicy.policy");
         System.setSecurityManager(new RMISecurityManager());
 
