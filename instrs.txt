@@ -1,0 +1,9 @@
+git config --global user.name "mohammad.salama"
+git config --global user.email "mohammad.salama@hiast.edu.sy"
+
+
+git init
+git remote add origin git@git.hiast.edu.sy:mohammad.salama/testdirs.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
