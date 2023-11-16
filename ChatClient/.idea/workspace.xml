@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="71bec43c-ef6e-431f-a77c-2b7f124f5fea" name="Changes" comment="printing Done">
       <change beforePath="$PROJECT_DIR$/../ChatServer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatServer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ChatServer/src/main/java/ServerChatImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatServer/src/main/java/ServerChatImp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +43,7 @@
     &quot;last_opened_file_path&quot;: &quot;D:/HIAST/FIY/FS/Distributed Systems/Lab/3/HW/ChatClient&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Client3">
+  <component name="RunManager" selected="Application.Client2">
     <configuration name="Client1" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="ChatClient" />
       <module name="ChatClient" />
