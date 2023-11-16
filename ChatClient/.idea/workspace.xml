@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71bec43c-ef6e-431f-a77c-2b7f124f5fea" name="Changes" comment="printing Done">
-      <change afterPath="$PROJECT_DIR$/../ChatServer/src/main/java/IClientChat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ChatServer/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatServer/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ChatServer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatServer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ChatServer/src/main/java/IClientChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatServer/src/main/java/IClientChat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ChatServer/src/main/java/IServerChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatServer/src/main/java/IServerChat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ChatServer/src/main/java/ServerChatImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatServer/src/main/java/ServerChatImp.java" afterDir="false" />
     </list>
@@ -43,10 +42,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/HIAST/FIY/FS/Distributed Systems/Lab/3/HW/ChatServer"
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "132",
+    "last_opened_file_path": "D:/HIAST/FIY/FS/Distributed Systems/Lab/3/HW/ChatClient"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Client1">
     <configuration name="Client1" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="ChatClient" />
       <module name="ChatClient" />
@@ -68,11 +68,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Registeration" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Registeration" />
+      <module name="ChatClient" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Client1" />
       <item itemvalue="Application.Client2" />
       <item itemvalue="Application.Client3" />
+      <item itemvalue="Application.Registeration" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Registeration" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

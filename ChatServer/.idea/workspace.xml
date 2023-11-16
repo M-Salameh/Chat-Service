@@ -5,11 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23a09f69-45e8-4607-a94c-253a284a386d" name="Changes" comment="ChatServiceFirst5">
-      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/ClientChatImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/IClientChat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ChatClient/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/LogIN.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/LogIN.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/LogOut.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/LogOut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/MainPanel.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/MainPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/MessagesInChat.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/MessagesInChat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/MyChatRooms.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/MyChatRooms.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ChatClient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ChatClient/src/main/java/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/ChatClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ChatClient/src/main/java/ClientChatImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/ClientChatImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ChatClient/src/main/java/IClientChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/IClientChat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ChatClient/src/main/java/IServerChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/IServerChat.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,15 +48,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/HIAST/FIY/FS/Distributed Systems/Lab/3/HW/ChatServer",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/HIAST/FIY/FS/Distributed Systems/Lab/3/HW/ChatClient&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\HIAST\FIY\FS\Distributed Systems\Lab\3\ChatServer" />

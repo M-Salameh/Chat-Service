@@ -3,25 +3,38 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ClientChatImp extends UnicastRemoteObject implements IClientChat
 {
     private String firstName, lastName, userName,password;
     IServerChat iServerChat;
 
-    public ClientChatImp(String firstName , String lastName , String userName , String password , String server) throws RemoteException, MalformedURLException, NotBoundException {
+    Map<String,MessagesInChat> messagesInChat = new HashMap<>();
+
+    public ClientChatImp(String firstName , String lastName , String userName ,
+                         String password , String server)
+            throws RemoteException, MalformedURLException, NotBoundException {
         this.lastName = lastName;
         this.userName = userName;
         this.firstName = firstName;
         this.password = password;
         this.iServerChat = (IServerChat) Naming.lookup("rmi://"+server+":1099/chat");
     }
-
-    @Override
-    public String receiveMessage(String Message) throws RemoteException
+    public void setMIC(MessagesInChat messagesInChat , String roomName)
     {
-        System.out.println(Message);
+        this.messagesInChat.put(roomName , messagesInChat);
+    }
+    @Override
+    public String receiveMessage(String Message , String roomName) throws RemoteException
+    {
+        //System.out.println(Message);
+//        this.myChatsAndRooms.receiveMsg(Message , roomName , this);
+        System.out.println("RECEIVING");
+        this.messagesInChat.get(roomName).receiveMsg(Message);
+        ///System.out.println(Message + " in Room : " + roomName);
         return Message;
     }
 
@@ -31,34 +44,35 @@ public class ClientChatImp extends UnicastRemoteObject implements IClientChat
         //return this.userName + " ( " + this.firstName+" " + this.lastName+" )";
         return this.userName;
     }
-    public void createChatRoom(String roomName) throws RemoteException
+    public boolean createChatRoom(String roomName) throws RemoteException
     {
-        iServerChat.createChatRoom(roomName , this);
+        return iServerChat.createChatRoom(roomName , this);
     }
 
-    public void joinChatRoom(String roomName) throws RemoteException
+    public boolean joinChatRoom(String roomName) throws RemoteException
     {
-        iServerChat.joinChatRoom(roomName , this);
+        return iServerChat.joinChatRoom(roomName , this);
     }
 
-    public void deleteChatRoom(String roomName) throws RemoteException
+    public boolean deleteChatRoom(String roomName) throws RemoteException
     {
-        iServerChat.deleteChatRoom(roomName , this);
+        return iServerChat.deleteChatRoom(roomName , this);
     }
 
-    public void Register(String fname , String lname, String username, String password ) throws RemoteException
+    public boolean Register() throws RemoteException
     {
-        iServerChat.Register(fname, lname , username , password , this);
+        System.out.println("Registering");
+        return iServerChat.Register(firstName , lastName , userName,  password , this);
     }
 
-    public void LogIn(String password) throws RemoteException
+    public boolean LogIn(String password) throws RemoteException
     {
-        iServerChat.LogIn(password , this);
+        return iServerChat.LogIn(password , this);
     }
 
-    public void LogOut() throws RemoteException
+    public boolean LogOut() throws RemoteException
     {
-        iServerChat.LogOut(this);
+        return iServerChat.LogOut(this);
     }
     public List<String> getChatRooms() throws RemoteException
     {
@@ -72,6 +86,7 @@ public class ClientChatImp extends UnicastRemoteObject implements IClientChat
 
     public void sendMessage(String roomName, String message) throws RemoteException
     {
-        iServerChat.sendMessage(roomName , message , this);
+        System.out.println("Sending MSG");
+         iServerChat.sendMessage(roomName , message , this);
     }
 }
