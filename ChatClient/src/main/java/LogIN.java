@@ -32,7 +32,7 @@ public class LogIN extends JFrame{
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 boolean can = (Password.getText().isEmpty());
-                if (!can)
+                if (can)
                 {
                     //UserName.setText("Cannot Be Empty");
                     Password.setText("Cannot Be Empty");

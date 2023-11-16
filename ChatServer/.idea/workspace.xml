@@ -5,21 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23a09f69-45e8-4607-a94c-253a284a386d" name="Changes" comment="ChatServiceFirst5">
-      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/LogIN.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/LogIN.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/LogOut.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/LogOut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/MainPanel.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/MainPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/MessagesInChat.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/MessagesInChat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/MyChatRooms.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/MyChatRooms.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ChatClient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ChatClient/src/main/java/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/ChatClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ChatClient/src/main/java/ClientChatImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/ClientChatImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ChatClient/src/main/java/IClientChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/IClientChat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ChatClient/src/main/java/IServerChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/IServerChat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ChatClient/src/main/java/CreatingChatRoom.form" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/CreatingChatRoom.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ChatClient/src/main/java/CreatingChatRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/CreatingChatRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ChatClient/src/main/java/DeletingChatRoom.form" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/DeletingChatRoom.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ChatClient/src/main/java/DeletingChatRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/DeletingChatRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ChatClient/src/main/java/JoiningChatRoom.form" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/JoiningChatRoom.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ChatClient/src/main/java/JoiningChatRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/JoiningChatRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ChatClient/src/main/java/LogIN.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ChatClient/src/main/java/LogIN.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

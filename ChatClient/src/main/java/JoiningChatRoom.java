@@ -7,6 +7,7 @@ public class JoiningChatRoom extends JFrame{
     private JPanel JoiningChatRoom;
     private JTextField ChatRoomName;
     private JButton Join;
+    private JButton GoMain;
 
     public JoiningChatRoom(ClientChatImp clientChatImp)
     {
@@ -48,6 +49,17 @@ public class JoiningChatRoom extends JFrame{
                     } catch (RemoteException ex) {
                         throw new RuntimeException(ex);
                     }
+                }
+            }
+        });
+        GoMain.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                try {
+                    goBack(clientChatImp);
+                } catch (RemoteException ex) {
+                    throw new RuntimeException(ex);
                 }
             }
         });

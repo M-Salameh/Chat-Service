@@ -7,6 +7,7 @@ public class DeletingChatRoom extends JFrame{
     private JTextField ChatRoomName;
     private JPanel DeletingChatRoom;
     private JButton Delete;
+    private JButton GoMain;
 
     public DeletingChatRoom(ClientChatImp clientChatImp)
     {
@@ -48,6 +49,17 @@ public class DeletingChatRoom extends JFrame{
                     } catch (RemoteException ex) {
                         throw new RuntimeException(ex);
                     }
+                }
+            }
+        });
+        GoMain.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                try {
+                    doit(clientChatImp);
+                } catch (RemoteException ex) {
+                    throw new RuntimeException(ex);
                 }
             }
         });

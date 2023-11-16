@@ -1,15 +1,13 @@
-import org.example.Main;
-
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.rmi.MarshalledObject;
 import java.rmi.RemoteException;
 
 public class CreatingChatRoom extends JFrame {
     private JPanel CreateChatRoom;
     private JTextField ChatRoomName;
     private JButton submit;
+    private JButton GoMain;
 
     public CreatingChatRoom(ClientChatImp clientChatImp) {
         setSize(600 , 600);
@@ -50,6 +48,17 @@ public class CreatingChatRoom extends JFrame {
                     } catch (RemoteException ex) {
                         throw new RuntimeException(ex);
                     }
+                }
+            }
+        });
+        GoMain.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                try {
+                    doit(clientChatImp);
+                } catch (RemoteException ex) {
+                    throw new RuntimeException(ex);
                 }
             }
         });

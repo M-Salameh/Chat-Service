@@ -33,7 +33,7 @@ public class ClientChatImp extends UnicastRemoteObject implements IClientChat
         //System.out.println(Message);
 //        this.myChatsAndRooms.receiveMsg(Message , roomName , this);
         System.out.println("RECEIVING");
-        this.messagesInChat.get(roomName).receiveMsg(Message);
+        if (this.messagesInChat.containsKey(roomName)) this.messagesInChat.get(roomName).receiveMsg(Message);
         ///System.out.println(Message + " in Room : " + roomName);
         return Message;
     }

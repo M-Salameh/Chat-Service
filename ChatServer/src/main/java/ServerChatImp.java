@@ -59,6 +59,10 @@ public class ServerChatImp extends UnicastRemoteObject implements IServerChat
             && ChatRoomsOwners.get(roomName).equals(iClientChat))
         {
             ChatRoomsOfUser.get(iClientChat).remove(roomName);
+            for (IClientChat iClientChat1 : ChatRoomMembers.get(roomName))
+            {
+                ChatRoomsOfUser.get(iClientChat1).remove(roomName);
+            }
             ChatRoomMembers.remove(roomName);
             ChatRoomMessages.remove(roomName);
             System.out.println("Deleted");
