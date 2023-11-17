@@ -3,7 +3,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.rmi.RemoteException;
 import java.util.List;
-import java.util.Map;
 
 public class MessagesInChat extends JFrame {
     private JTextField Message;
@@ -11,6 +10,7 @@ public class MessagesInChat extends JFrame {
     private JTextArea Texts;
     private JPanel Conversation;
     private JButton MainMenu;
+    private JButton viewUsersButton;
     private String roomName= "";
 
     public MessagesInChat(ClientChatImp clientChatImp , String roomname) throws RemoteException {
@@ -61,6 +61,14 @@ public class MessagesInChat extends JFrame {
                 } catch (RemoteException ex) {
                     throw new RuntimeException(ex);
                 }
+            }
+        });
+        viewUsersButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                System.out.println("FDDFs");
+                UsersInChat usersInChat = new UsersInChat(clientChatImp , roomname);
             }
         });
     }

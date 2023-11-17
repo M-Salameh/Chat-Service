@@ -10,6 +10,7 @@ public class MainPanel extends JFrame{
     private JButton DeleteRoom;
     private JButton LogOut;
     private JButton ViewChats;
+    private JButton AllChatRroms;
 
     public MainPanel(ClientChatImp clientChatImp) throws RemoteException {
         setContentPane(MyChats);
@@ -54,8 +55,20 @@ public class MainPanel extends JFrame{
                 viewChatRoom(clientChatImp);
             }
         });
+        AllChatRroms.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                seeAllRooms(clientChatImp);
+            }
+        });
     }
 
+    public void seeAllRooms(ClientChatImp clientChatImp)
+    {
+        AllChatRooms allChatRooms = new AllChatRooms(clientChatImp);
+        this.dispose();
+    }
     public void viewChatRoom(ClientChatImp clientChatImp)
     {
         MyChatRooms myChatRooms = new MyChatRooms(clientChatImp);

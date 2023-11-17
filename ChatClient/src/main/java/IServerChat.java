@@ -21,6 +21,12 @@ public interface IServerChat extends Remote
 
     public void sendMessage(String roomName, String message , IClientChat iClientChat ) throws RemoteException;
 
+    public void multiCastMessage(String message ,IClientChat iClientChat , List<IClientChat> iClientChats ) throws RemoteException;
+
     public boolean LogOut(IClientChat iClientChat) throws RemoteException;
+
+    public List<String> getAllChatRooms(IClientChat iClientChat) throws RemoteException;
+
+    public List<IClientChat> getAllUsersInRoom(IClientChat iClientChat , String roomName) throws RemoteException;
 
 }

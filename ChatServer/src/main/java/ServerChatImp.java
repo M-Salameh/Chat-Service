@@ -2,45 +2,42 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.*;
 
-public class ServerChatImp extends UnicastRemoteObject implements IServerChat
-{
-    Map<String , IClientChat> users = new HashMap<>();
-    Map<IClientChat , List<String>> ChatRoomsOfUser = new HashMap<>(); /// Creator -> chat rooms created
-    Map<IClientChat , Boolean> ActiveUsers = new HashMap<>();
-    Map<IClientChat , String> UsersPasswords = new HashMap<>();
+public class ServerChatImp extends UnicastRemoteObject implements IServerChat {
+    Map<String, IClientChat> users = new HashMap<>();
+    Map<IClientChat, List<String>> ChatRoomsOfUser = new HashMap<>(); /// Creator -> chat rooms created
+    Map<IClientChat, Boolean> ActiveUsers = new HashMap<>();
+    Map<IClientChat, String> UsersPasswords = new HashMap<>();
 
-    Map<String , List<String>> ChatRoomMessages = new HashMap<>();
+    Map<String, List<String>> ChatRoomMessages = new HashMap<>();
 
-    Map<String , List<IClientChat>> ChatRoomMembers = new HashMap<>();
+    Map<String, List<IClientChat>> ChatRoomMembers = new HashMap<>();
 
-    Map<String , IClientChat> ChatRoomsOwners = new HashMap<>();
+    Map<String, IClientChat> ChatRoomsOwners = new HashMap<>();
 
 
-    protected ServerChatImp() throws RemoteException
-    {
+    protected ServerChatImp() throws RemoteException {
     }
 
     @Override
-    public boolean createChatRoom(String roomName, IClientChat iClientChat) throws RemoteException
-    {
+    public boolean createChatRoom(String roomName, IClientChat iClientChat) throws RemoteException {
         String userName = iClientChat.getUserName();
         if (!users.containsKey(userName)) return false;
         if (ChatRoomsOfUser.get(iClientChat).contains(roomName)) return false;
-        if (ChatRoomsOwners.containsKey(roomName)) return  false;
+        if (ChatRoomsOwners.containsKey(roomName)) return false;
         ChatRoomsOfUser.get(iClientChat).add(roomName);
-        ChatRoomsOwners.put(roomName , iClientChat);
-        ChatRoomMembers.put(roomName , new ArrayList<>());
+        ChatRoomsOwners.put(roomName, iClientChat);
+        ChatRoomMembers.put(roomName, new ArrayList<>());
         ChatRoomMembers.get(roomName).add(iClientChat);
 
-        ChatRoomMessages.put(roomName , new ArrayList<>());
+        ChatRoomMessages.put(roomName, new ArrayList<>());
         System.out.println("Created");
         return true;
     }
 
     @Override
-    public boolean joinChatRoom(String roomName, IClientChat iClientChat) throws RemoteException
-    {
+    public boolean joinChatRoom(String roomName, IClientChat iClientChat) throws RemoteException {
         if (!ChatRoomMembers.containsKey(roomName)) return false;
+        if (ChatRoomMembers.get(roomName).contains(iClientChat)) return false;
         ChatRoomMembers.get(roomName).add(iClientChat);
         ChatRoomsOfUser.get(iClientChat).add(roomName);
         System.out.println("joined");
@@ -48,19 +45,15 @@ public class ServerChatImp extends UnicastRemoteObject implements IServerChat
     }
 
     @Override
-    public boolean deleteChatRoom(String roomName, IClientChat iClientChat) throws RemoteException
-    {
+    public boolean deleteChatRoom(String roomName, IClientChat iClientChat) throws RemoteException {
         String userName = iClientChat.getUserName();
-        if (!users.containsKey(userName))
-        {
+        if (!users.containsKey(userName)) {
             return false;
         }
         if (ChatRoomsOwners.containsKey(roomName)
-            && ChatRoomsOwners.get(roomName).equals(iClientChat))
-        {
+                && ChatRoomsOwners.get(roomName).equals(iClientChat)) {
             ChatRoomsOfUser.get(iClientChat).remove(roomName);
-            for (IClientChat iClientChat1 : ChatRoomMembers.get(roomName))
-            {
+            for (IClientChat iClientChat1 : ChatRoomMembers.get(roomName)) {
                 ChatRoomsOfUser.get(iClientChat1).remove(roomName);
             }
             ChatRoomMembers.remove(roomName);
@@ -73,55 +66,45 @@ public class ServerChatImp extends UnicastRemoteObject implements IServerChat
     }
 
     @Override
-    public boolean Register(String fname, String lname, String username, String password , IClientChat iClientChat) throws RemoteException
-    {
-        if (users.containsKey(username))
-        {
+    public boolean Register(String fname, String lname, String username, String password, IClientChat iClientChat) throws RemoteException {
+        if (users.containsKey(username)) {
             return false;
         }
-        users.put(username , iClientChat);
-        ChatRoomsOfUser.put(iClientChat , new ArrayList<>());
-        UsersPasswords.put(iClientChat , password);
-        ActiveUsers.put(iClientChat , true);
+        users.put(username, iClientChat);
+        ChatRoomsOfUser.put(iClientChat, new ArrayList<>());
+        UsersPasswords.put(iClientChat, password);
+        ActiveUsers.put(iClientChat, true);
         return true;
         //System.out.println("RRRRRR");
     }
 
     @Override
-    public boolean LogIn(String password  , IClientChat iClientChat) throws RemoteException
-    {
+    public boolean LogIn(String password, IClientChat iClientChat) throws RemoteException {
         String username = iClientChat.getUserName();
-        if (!users.containsKey(username))
-        {
+        if (!users.containsKey(username)) {
             //iClientChat.receiveMessage("You do not have an account");
             return false;
         }
 
-        if (UsersPasswords.get(iClientChat).equals(password)) ActiveUsers.put(iClientChat , true);
+        if (UsersPasswords.get(iClientChat).equals(password)) ActiveUsers.put(iClientChat, true);
         //else iClientChat.receiveMessage("Wrong password");
         return true;
     }
 
     @Override
-    public List<String> getChatRooms(IClientChat iClientChat) throws RemoteException
-    {
-        if (ChatRoomsOfUser.get(iClientChat).size() == 0)
-        {
+    public List<String> getChatRooms(IClientChat iClientChat) throws RemoteException {
+        if (ChatRoomsOfUser.get(iClientChat).size() == 0) {
             //System.out.println("Here");
             return new ArrayList<>();
-        }
-        else
-        {
-          ///  System.out.println("ChatRoomsLoist");
+        } else {
+            ///  System.out.println("ChatRoomsLoist");
             return ChatRoomsOfUser.get(iClientChat);
         }
     }
 
     @Override
-    public List<String> getConversation(String roomName, IClientChat iClientChat) throws RemoteException
-    {
-        if (!(ChatRoomMembers.containsKey(roomName) && (ChatRoomMembers.get(roomName)).contains(iClientChat)))
-        {
+    public List<String> getConversation(String roomName, IClientChat iClientChat) throws RemoteException {
+        if (!(ChatRoomMembers.containsKey(roomName) && (ChatRoomMembers.get(roomName)).contains(iClientChat))) {
             return new ArrayList<>();
         }
 
@@ -130,40 +113,68 @@ public class ServerChatImp extends UnicastRemoteObject implements IServerChat
     }
 
     @Override
-    public void sendMessage(String roomName, String Message, IClientChat iClientChat) throws RemoteException
-    {
-        if (ChatRoomMembers.containsKey(roomName) && ChatRoomMembers.get(roomName).contains(iClientChat))
-        {
+    public void sendMessage(String roomName, String Message, IClientChat iClientChat) throws RemoteException {
+        if (ChatRoomMembers.containsKey(roomName) && ChatRoomMembers.get(roomName).contains(iClientChat)) {
             Message = iClientChat.getUserName() + " : " + Message;
             Message = Message + "\n" + "************************************************\n";
             String finalMessage = Message;
             ChatRoomMessages.get(roomName).add(Message);
             ChatRoomMembers.get(roomName).stream().forEach
                     (
-                        client->
+                            client ->
                             {
                                 if (ActiveUsers.get(client))
-                                    try
-                                    {
+                                    try {
                                         System.out.println("Can send to " + client.getUserName());
-                                        client.receiveMessage(finalMessage , roomName);
+                                        client.receiveMessage(finalMessage, roomName);
+                                    } catch (RemoteException e) {
+                                        ActiveUsers.put(client, false);
                                     }
-                                    catch (RemoteException e)
-                                    {
-                                        ActiveUsers.put(client , false);
-                                    }
-                        }
-                  );
+                            }
+                    );
         }
         ///else System.out.println("NO USERS !!");
     }
 
     @Override
-    public boolean LogOut(IClientChat iClientChat) throws RemoteException
-    {
+    public boolean LogOut(IClientChat iClientChat) throws RemoteException {
         String username = iClientChat.getUserName();
         if (!users.containsKey(username)) return false;
         ActiveUsers.put(iClientChat, false);
         return true;
+    }
+
+    public List<String> getAllChatRooms(IClientChat iClientChat) throws RemoteException {
+        List<String> chatRooms = new ArrayList<>();
+        for (String rom : ChatRoomsOwners.keySet()) {
+            chatRooms.add(rom);
+        }
+        return chatRooms;
+    }
+
+    public List<IClientChat> getAllUsersInRoom(IClientChat iClientChat, String roomName) throws RemoteException {
+        List<IClientChat> list = ChatRoomMembers.get(roomName);
+        return list;
+    }
+
+    @Override
+    public void multiCastMessage(String Message, IClientChat iClientChat, List<IClientChat> iClientChats) throws RemoteException
+    {
+        Message = iClientChat.getUserName() + " : " + Message;
+        Message = Message + "\n" + "************************************************\n";
+        String finalMessage = Message;
+        iClientChats.stream().forEach
+                (
+                        client ->
+                        {
+                            if (ActiveUsers.get(client))
+                                try {
+                                    System.out.println("Can send to " + client.getUserName());
+                                    client.receiveMessage(finalMessage,iClientChat);
+                                } catch (RemoteException e) {
+                                    ActiveUsers.put(client, false);
+                                }
+                        }
+                );
     }
 }

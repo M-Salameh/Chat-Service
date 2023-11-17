@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -59,7 +60,8 @@ public class ChatClient
         return clientChatImps;
     }
 
-    public static void main(String[] args) throws MalformedURLException, NotBoundException, RemoteException {
+    public static void main(String[] args) throws MalformedURLException, NotBoundException, RemoteException
+    {
         String loc = "localhost";
         Registeration registeration = new Registeration(loc);
        /* List<ClientChatImp> clientChatImps = prevTest();

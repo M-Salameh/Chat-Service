@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.rmi.RemoteException;
+import java.util.Optional;
 
 public class JoiningChatRoom extends JFrame{
     private JPanel JoiningChatRoom;
@@ -68,4 +69,5 @@ public class JoiningChatRoom extends JFrame{
         MainPanel mainPanel = new MainPanel(clientChatImp);
         this.dispose();
     }
+
 }
